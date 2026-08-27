@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "ap-south-1"
+  region = "ap-south-2"
 }
 
 # -------------------------
@@ -21,7 +21,7 @@ resource "aws_subnet" "prakash_subnet" {
 
   vpc_id                  = aws_vpc.prakash_vpc.id
   cidr_block              = cidrsubnet(aws_vpc.prakash_vpc.cidr_block, 8, count.index)
-  availability_zone       = element(["ap-south-1a", "ap-south-1b"], count.index)
+  availability_zone       = element(["ap-south-2a", "ap-south-2b"], count.index)
   map_public_ip_on_launch = true
 
   tags = {
