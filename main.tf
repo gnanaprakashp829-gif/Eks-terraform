@@ -220,7 +220,7 @@ resource "aws_eks_node_group" "prakash" {
     max_size     = 3
   }
 
-  instance_types = ["t3.medium"]
+  instance_types = ["t3.micro"]
 
   remote_access {
     ec2_ssh_key = var.ssh_key_name
